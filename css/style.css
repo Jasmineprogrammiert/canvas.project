@@ -2,6 +2,43 @@
 body {
   overflow: hidden;
 }
+
+/* Control Panel */
+/* .control-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 13vw;
+  background-color: hsl(0, 0%, 19%);
+
+}
+.bottons {
+  justify-content: center;
+  align-items: center;
+} */
+.control-panel {
+  position: relative;
+  height: 100vh;
+  width: 10vw;
+  background-color: hsl(0, 0%, 19%);
+}
+/* Why the relative-absolute doesn't work? */
+.buttons {
+  position: absolute;
+  top: 5vh;
+  left: 1vw;
+}
+.icons {
+  top: 5;
+  width: 2.5vw;
+  height: 2.5vw;
+  border-radius: 8px;
+  border: 1.5px #64748b solid;
+  cursor: pointer;
+}
+
+/* Canvas */
 #canvas-container {
   height: 720px;
 }
@@ -15,19 +52,4 @@ body {
 }
 #canvas-draft {
   background-color: transparent;
-}
-
-/* Control Panel */
-.control-panel {
-  position: absolute;
-  top: 10vh;
-  left: 2vw;
-}
-.icons {
-  width: 2.5vw;
-  height: 2.5vw;
-  border-radius: 8px;
-  border: 3px #64748b solid;
-  /* background-color: #64748b; */
-  cursor: pointer;
 }
