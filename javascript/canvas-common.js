@@ -1,8 +1,4 @@
-/**********************************************
- * The Canvas
- * ==================================
- ***********************************************/
-
+// Canvas - Universal
 let canvasReal = document.getElementById("canvas-real");
 let contextReal = canvasReal.getContext("2d");
 let canvasDraft = document.getElementById("canvas-draft");
@@ -10,9 +6,15 @@ let contextDraft = canvasDraft.getContext("2d");
 let currentFunction;
 let dragging = false;
 
+// Use jQuery to select: $("")
+// Add Eventlistener to the Canvas element on the DOM
+// element.addEventListner(event, listner(could be a function))
 $("#canvas-draft").mousedown(function (e) {
+  // offsetX: returns the x-coordinate of the mouse, relative to the target element (the DOM window)
   let mouseX = e.offsetX;
   let mouseY = e.offsetY;
+  // Pass the coordinates to the strategy patern currently set
+  // Pass an array: passing two values as a single argument
   currentFunction.onMouseDown([mouseX, mouseY], e);
   dragging = true;
 });
@@ -46,8 +48,7 @@ $("#canvas-draft").mouseenter(function (e) {
   currentFunction.onMouseEnter([mouseX, mouseY], e);
 });
 
-/** # Class (all classes will have these methods) #
-/*  ====================== */
+// Class (all classes will have these methods)
 class PaintFunction {
   constructor() {}
   onMouseDown() {}

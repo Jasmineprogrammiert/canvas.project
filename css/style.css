@@ -27,15 +27,16 @@ body {
 .buttons {
   position: absolute;
   top: 5vh;
-  left: 1vw;
+  left: 0.9vw;
 }
 .icons {
-  top: 5;
   width: 2.5vw;
   height: 2.5vw;
   border-radius: 8px;
   border: 1.5px #64748b solid;
+  /* Why cursor doesn't work? */
   cursor: pointer;
+  margin-bottom: 0.5vh;
 }
 
 /* Canvas */

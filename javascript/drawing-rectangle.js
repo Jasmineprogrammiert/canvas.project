@@ -1,9 +1,4 @@
-/**********************************************
- * Drawing Rectangle Functionality
- * ==================================
- * This class extends the PaintFunction class, which you can find in canvas-common
- ***********************************************/
-// https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/clearRect
+// Drawing Rectangle Functionality
 
 class DrawingRectangle extends PaintFunction {
   constructor(contextReal, contextDraft) {
@@ -13,26 +8,23 @@ class DrawingRectangle extends PaintFunction {
   }
 
   onMouseDown(coord, event) {
-    this.contextReal.fillStyle = "#f44";
-    this.origX = coord[0];
+    this.contextReal.fillStyle = "#f44"; // Manipulating the context draft
+    this.origX = coord[0]; // coord[0] refers to mouseX in canvas-common.js
     this.origY = coord[1];
   }
 
   onDragging(coord, event) {
-    // Manipulating the context draft
     this.contextDraft.fillStyle = "#f44";
-    // Allows you to actually draw out your squares
-    this.contextDraft.clearRect(
+    this.contextDraft.clearRect( // Disable drawing when pressing & moving around the mouse
       0,
       0,
       canvasDraft.width,
       canvasDraft.height
     );
-    // Pass in the original x and y coordinates, followed by the new coordinates that we get for position x and y
-    this.contextDraft.fillRect(
+    this.contextDraft.fillRect( // Pass in the original x and y coordinates, followed by the new coordinates get for position x and y
       this.origX,
       this.origY,
-      coord[0] - this.origX,
+      coord[0] - this.origX, // mouseX (currentPosition) - this.origX (originPosition)
       coord[1] - this.origY
     );
   }
@@ -41,16 +33,13 @@ class DrawingRectangle extends PaintFunction {
 
   // Committing the element to the canvas
   onMouseUp(coord) {
-    // Clearing the rectangle first
-    this.contextDraft.clearRect(
+    this.contextDraft.clearRect(  // Clearing the rectangle first
       0,
       0,
       canvasDraft.width,
       canvasDraft.height
     );
-    // Commit that drawing to context real
-    // Without this commit, it won't actually draw
-    this.contextReal.fillRect(
+    this.contextReal.fillRect( // Commit that drawing to context real. Otherwise it won't actually draw
       this.origX,
       this.origY,
       coord[0] - this.origX,
