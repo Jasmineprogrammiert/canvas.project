@@ -1,3 +1,10 @@
+/* Universal */
+body {
+  overflow: hidden;
+}
+#canvas-container {
+  height: 720px;
+}
 .canvas {
   border: 1px black dotted;
   position: absolute;
@@ -6,13 +13,21 @@
   left: 0px;
   right: 0px;
 }
-
 #canvas-draft {
   background-color: transparent;
 }
-body {
-  overflow: hidden;
+
+/* Control Panel */
+.control-panel {
+  position: absolute;
+  top: 10vh;
+  left: 2vw;
 }
-#canvas-container {
-  height: 720px;
+.icons {
+  width: 2.5vw;
+  height: 2.5vw;
+  border-radius: 8px;
+  border: 3px #64748b solid;
+  /* background-color: #64748b; */
+  cursor: pointer;
 }
