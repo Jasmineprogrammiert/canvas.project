@@ -1,8 +1,6 @@
-// Drawing Rectangle Functionality
 // This class extends the PaintFunction class, which can be found in canvas-common.js
 // Remember, order matters
 // https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/clearRect
-
 class DrawingLine extends PaintFunction {
   // This class extends the PaintFunction class
   // One instance is passing here
@@ -16,10 +14,10 @@ class DrawingLine extends PaintFunction {
     this.context.strokeStyle = "#df4b26"; // Fill in the color
     this.context.lineJoin = "round";  // Kind of line
     this.context.lineWidth = 3; // Width of line
-    this.context.beginPath(); // Drawing the line here
-    this.context.moveTo(coord[0], coord[1]);
+    this.context.beginPath(); // Begin the path drawing state
+    this.context.moveTo(coord[0], coord[1]); // Move the starting poiny to a specific state
   }
-  onDragging(coord, event) { // Clicking & removing the mouse
+  onDragging(coord, event) { // Click & move the mouse
     this.draw(coord[0], coord[1]);
   }
 
@@ -30,6 +28,6 @@ class DrawingLine extends PaintFunction {
 
   draw(x, y) {
     this.context.lineTo(x, y);
-    this.context.stroke(); // Draw the line onto the page
+    this.context.stroke(); // The actual step of drawing the line
   }
 }

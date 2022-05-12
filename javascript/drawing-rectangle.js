@@ -1,5 +1,3 @@
-// Drawing Rectangle Functionality
-
 class DrawingRectangle extends PaintFunction {
   constructor(contextReal, contextDraft) {
     super();

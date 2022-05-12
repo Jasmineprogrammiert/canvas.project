@@ -9,13 +9,11 @@ let dragging = false;
 // Use jQuery to select: $("")
 // Add Eventlistener to the Canvas element on the DOM
 // element.addEventListner(event, listner(could be a function))
+// Pass the coordinates to the strategy patern currently set
 $("#canvas-draft").mousedown(function (e) {
-  // offsetX: returns the x-coordinate of the mouse, relative to the target element (the DOM window)
-  let mouseX = e.offsetX;
+  let mouseX = e.offsetX; // offsetX: returns the x-coordinate of the mouse, relative to the target element (the DOM window)
   let mouseY = e.offsetY;
-  // Pass the coordinates to the strategy patern currently set
-  // Pass an array: passing two values as a single argument
-  currentFunction.onMouseDown([mouseX, mouseY], e);
+  currentFunction.onMouseDown([mouseX, mouseY], e); // Pass an array: passing two values as a single argument
   dragging = true;
 });
 
