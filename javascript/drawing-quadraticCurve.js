@@ -56,11 +56,8 @@ class DrawingQuadraticCurve extends PaintFunction {
       this.contextReal.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
       this.contextReal.beginPath();
       this.contextReal.moveTo(this.origX, this.origY);
-      tshi.contextReal.quadraticCurveTo(coord[0], coord[1], this.endX, this.endY);
+      this.contextReal.quadraticCurveTo(coord[0], coord[1], this.endX, this.endY);
       this.contextReal.stroke();
-      // How come ?
-      push();
-      this.count = 0;
     }
   }
 
