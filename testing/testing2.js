@@ -1,4 +1,5 @@
 // Quadratic Curve - completed with minor drawbacks
+
 class DrawingQuadraticCurve extends PaintFunction {
   constructor(contextReal, contextDraft) {
     super();
@@ -47,10 +48,15 @@ class DrawingQuadraticCurve extends PaintFunction {
     // Why what if statement is needed here?
     if(this.click === 0) {
       this.click++;
-      this.click;
+      console.log(this.click);
     } else if(this.click === 1) {
-      // this.click === 1;
-    } 
+      console.log(this.click === 1)
+      // this.clearCanvas();
+      // this.contextReal.beginPath();
+      // this.contextReal.moveTo(this.origX, this.origY);
+      // this.contextReal.quadraticCurveTo(coord[0], coord[1], this.endX, this.endY);
+      // this.contextReal.stroke();
+    }
   }
 
   onMouseLeave() {}

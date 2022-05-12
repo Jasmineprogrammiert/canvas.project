@@ -11,10 +11,6 @@ body {
   border:2px black solid;
   position:absolute;
 }
-.canvas {
-  border: 2px black solid;
-  position: absolute;
-}
 #canvas-draft {
   background-color: transparent;
 }
