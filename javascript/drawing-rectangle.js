@@ -6,43 +6,29 @@ class DrawingRectangle extends PaintFunction {
   }
 
   onMouseDown(coord, event) {
-    this.contextReal.fillStyle = "#f44"; // Manipulating the context draft
-    this.origX = coord[0]; // coord[0] refers to mouseX in canvas-common.js
+    this.contextReal.fillStyle = "#CD5C5C";
+    this.origX = coord[0];
     this.origY = coord[1];
   }
 
   onDragging(coord, event) {
-    this.contextDraft.fillStyle = "#f44";
-    this.contextDraft.clearRect( // Disable drawing when pressing & moving around the mouse
-      0,
-      0,
-      canvasDraft.width,
-      canvasDraft.height
-    );
-    this.contextDraft.fillRect( // Pass in the original x and y coordinates, followed by the new coordinates get for position x and y
-      this.origX,
-      this.origY,
-      coord[0] - this.origX, // mouseX (currentPosition) - this.origX (originPosition)
-      coord[1] - this.origY
-    );
+    this.contextDraft.fillStyle = "#CD5C5C";
+    // Clear the drawing from (0, 0) to (canvasDraft.width, canvasDraft.height) when the mouse is dragging around
+    this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height); 
+    // Original coordinate (this.origX, this.origY)
+    // New coordinate (coord[0] - this.origX, coord[1] - this.origY)
+    this.contextDraft.fillRect(this.origX, this.origY, coord[0] - this.origX, coord[1] - this.origY);
   }
 
   onMouseMove() {}
 
-  // Committing the element to the canvas
+  // Committing the element to canvasReal
   onMouseUp(coord) {
-    this.contextDraft.clearRect(  // Clearing the rectangle first
-      0,
-      0,
-      canvasDraft.width,
-      canvasDraft.height
+    // Clearing the rectangle first
+    this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height
     );
-    this.contextReal.fillRect( // Commit that drawing to context real. Otherwise it won't actually draw
-      this.origX,
-      this.origY,
-      coord[0] - this.origX,
-      coord[1] - this.origY
-    );
+    // Commit that drawing to context real. Otherwise it won't actually draw
+    this.contextReal.fillRect(this.origX, this.origY, coord[0] - this.origX, coord[1] - this.origY);
   }
   onMouseLeave() {}
   onMouseEnter() {}

@@ -20,27 +20,27 @@
 
     <div class="control-panel">   
       <div class="buttons">
-        <!-- Row 1 -->
+        <!-- Group 1 -->
         <img src="/images/draw-line.png" alt="draw-line" id="drawing-line" class="icons">
         <img src="/images/brush.png" alt="brush" id="brush" class="icons">
         <img src="/images/spray-can.png" alt="spray-can" id="spray-can" class="icons">
-        <!-- Row 2 -->
+        <!-- Group 2 -->
         <img src="/images/curve.png" alt="curve" id="drawing-quadraticCurve" class="icons">
         <img src="/images/circle.png" alt="circle" id="circle" class="icons">
         <img src="/images/rectangle.png" alt="rectangle" id="drawing-rectangle" class="icons">
-        <!-- Row 3 -->
+        <!-- Group 3 -->
         <img src="/images/bezier-curve.png" alt="bezier-curve" id="bezier-curve" class="icons">
         <img src="/images/polygon.png" alt="polygon" id="polygon" class="icons">
         <img src="/images/shapes.png" alt="shapes" id="shapes" class="icons">
-        <!-- Row 4 -->
+        <!-- Group 4 -->
         <img src="/images/fill-in.png" alt="fill-in" id="fill-in" class="icons">
         <img src="/images/font.png" alt="font" id="font" class="icons">
         <img src="/images/emoji.png" alt="emoji" id="emoji" class="icons">
-        <!-- Row 5 -->
+        <!-- Group 5 -->
         <img src="/images/eraser.png" alt="eraser" id="eraser" class="icons">
         <img src="/images/undo.png" alt="undo" id="undo" class="icons">
         <img src="/images/redo.png" alt="redo" id="redo" class="icons">
-        <!-- Row 6 -->
+        <!-- Group 6 -->
         <img src="/images/clear.png" alt="clear" id="clear" class="icons">
         <img src="/images/upload.png" alt="upload" id="upload" class="icons">
         <img src="/images/download.png" alt="download" id="download" class="icons">
@@ -62,24 +62,23 @@
     <script src="./javascript/canvas-common.js" type="text/javascript"></script>
     <!-- Line -->
     <script src="./javascript/drawing-line.js" type="text/javascript"></script>
-    <!-- Rectangle -->
-    <script src="./javascript/drawing-rectangle.js" type="text/javascript"></script>
     <!-- Quadratic Curve -->
     <script src="./javascript/drawing-quadraticCurve.js" type="text/javascript"></script>
+    <!-- Rectangle -->
+    <script src="./javascript/drawing-rectangle.js" type="text/javascript"></script>
 
     <script type="text/javascript">
       $(()=>{
         currentFunction =  new DrawingLine(contextReal)
-        $("#drawing-rectangle").click(() => {
-          currentFunction = new DrawingRectangle(contextReal, contextDraft);
-        });
         $("#drawing-line").click(() => {
           currentFunction = new DrawingLine(contextReal);
         });  
-        $("drawing-quadraticCurve").click(() => {
-          currentFunction = new DrawingQuadraticCurve (contextDraft, contextReal);
+        $("#drawing-quadraticCurve").click(() => {
+          currentFunction = new DrawingQuadraticCurve (contextReal, contextDraft);
+        })
+        $("#drawing-rectangle").click(() => {
+          currentFunction = new DrawingRectangle(contextReal, contextDraft);
         });
-
 
       })
         
