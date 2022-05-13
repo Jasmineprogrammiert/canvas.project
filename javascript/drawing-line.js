@@ -1,22 +1,26 @@
-// This class extends the PaintFunction class, which can be found in canvas-common.js
-// Remember, order matters
-// https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/clearRect
+// class MyEventTarget extends EventTarget {
+//   constructor(mySecret) {
+//     super();
+//     this._secret = mySecret;
+//   }
 class DrawingLine extends PaintFunction {
-  // This class extends the PaintFunction class, one instance is passing here
   constructor(contextReal) {
-    super(); // super(): to access & call functions on an object's parent
+    super(); 
     this.contextReal = contextReal;
   }
 
   // On mouse down, ensure that the pen has these features
   onMouseDown(coord, event) {
-    this.contextReal.strokeStyle = "#CD5C5C"; // Fill in the color
-    this.contextReal.lineJoin = "round";  // Kind of line
-    this.contextReal.lineWidth = 3; // Width of line
-    this.contextReal.beginPath(); // Begin the path drawing state
-    this.contextReal.moveTo(coord[0], coord[1]); // Move the starting poiny to a specific state. coord[0] = mouseX. (x, y) is called a coordinate
+    this.contextReal.strokeStyle = "#CD5C5C";
+    this.contextReal.lineJoin = "round"; 
+    this.contextReal.lineWidth = 3; 
+    this.contextReal.beginPath(); // Start a new path
+    // Move the pen to coordinate (coord[0], coord[1])
+    // coord[0] = mouseX (definded in canvas-common.js)
+    this.contextReal.moveTo(coord[0], coord[1]); 
   }
-  onDragging(coord, event) { // Click & move the mouse
+  
+  onDragging(coord, event) {
     this.draw(coord[0], coord[1]);
   }
 
@@ -27,6 +31,6 @@ class DrawingLine extends PaintFunction {
 
   draw(x, y) {
     this.contextReal.lineTo(x, y);
-    this.contextReal.stroke(); // The actual step of drawing the line
+    this.contextReal.stroke(); 
   }
 }

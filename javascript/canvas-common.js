@@ -6,8 +6,7 @@ let contextDraft = canvasDraft.getContext("2d");
 let currentFunction;
 let dragging = false;
 
-// Use jQuery to select: $("")
-// Add Eventlistener to the Canvas element on the DOM
+// jQuery: $(selector).action()
 // element.addEventListner(event, listner(could be a function))
 $("#canvas-draft").mousedown(function (e) {
   // offsetX: returns the x-coordinate of the mouse, relative to the target element (the DOM window)

@@ -1,54 +1,35 @@
 # Canvas Application :rocket:
 
 #### Tip:
-
 Try removing lines of code to see how it works together. Go slow, and read the documentation. Also, looking at different examples online might be helpful!
 
 #### Examples:
-
 - the-canvas-boys.surge.sh
+- http://nostalgic-paint.surge.sh/
+- https://brockwei.github.io/canvas/
 - http://canvasg2march.surge.sh/
 
-### How to run this package
+#### Useful Links
+https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_usage
 
-- Make sure you clone the repository
+### Functionality
+1. Scribblbe (drawing-line.js) (DONE)
+2. Brush
+3. Spray-can
+4. Quadratic Curve (arc)
+5. Circle
+6. Rectangle (DONE)
+7. Bezier Curve
+8. Polygon
+9. Random Shapes
+10. Fill-in
+11. Font
+12. Emoji
+13. Eraser
+14. Undo
+15. Redo
+16. Clear
+17. Upload
+18. Download
 
-- Double click on index.html
 
-### How it works :open_book:
-
-In the javascript folder, there are various functionalities for the canvas application (please implement more, here)
-
-- javascript
-  - canvas-common.js
-  - drawing-line.js
-  - drawing-rectangle.js
-- css
-  - style.css
-
-## Sprint :athletic_shoe:
-
-| Done? | Component                         | Priority | Estimated Time | Actual Time |
-| ----- | --------------------------------- | :------: | :------------: | :---------: |
-|       | Read Documentation                |    M     |                |             |
-|       | Write down a list of requirements |    M     |                |             |
-|       | Look over the code                |    M     |                |             |
-|       | Functionality 1: Circle           |    M     |                |             |
-|       | Functionality 2: Eraser           |    M     |                |             |
-|       | Functionality 3: (You choose!)    |    M     |                |             |
-|       | Functionality 4:                  |    M     |                |             |
-|       | Functionality 5:                  |    M     |                |             |
-|       | Functionality 6:                  |    M     |                |             |
-
-- [Further Documentation and Tutorial](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_usage)
-
-## Issues and Resolutions :flashlight:
-
-**ERROR**: :gear:
-**RESOLUTION**: :key:
-
-| Issue             | Where it occurs |  Possible solution   |   Actual solution    |
-| ----------------- | :-------------: | :------------------: | :------------------: |
-| Unsure what to do |        H        | Creating a checklist | Creating a checklist |
-
-#### What is one thing that I learned from doing this project? :books:
