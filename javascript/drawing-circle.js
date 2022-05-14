@@ -1,4 +1,4 @@
-class DrawingRectangle extends PaintFunction {
+class DrawingCircle extends PaintFunction {
   constructor(contextReal, contextDraft) {
     super();
     this.contextReal = contextReal;
@@ -10,15 +10,17 @@ class DrawingRectangle extends PaintFunction {
     this.contextDraft.strokeStyle = "#CD5C5C";
     this.contextDraft.lineJoin = "round"; 
     this.contextDraft.lineWidth = 3; 
-    this.cpx = coord[0];
-    this.cpy = coord[1];
+    this.x = coord[0];
+    this.y = coord[1];
   }
 
   onDragging(coord, event) {
     this.clearCanvas();
     this.contextDraft.beginPath();
-    // Start at coordinate (this.cpx, this.cpy) and draw a (mouseX - this.cpx, mouseY - this.cpy) rectangle / square
-    this.contextDraft.rect(this.cpx, this.cpy, coord[0] - this.cpx, coord[1] - this.cpy);
+    this.radius = Math.pow((Math.pow((coord[0] - this.x), 2),(Math.pow((coord[1] - this.y), 2))), 1 / 2);
+    // context.arc(x, y, r, sAngle, eAngle) <= clockwise
+    // context.arc(x, y, r, sAngle, eAngle, counterclockwise)
+    this.contextDraft.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
     this.contextDraft.stroke();
   }
 
@@ -30,7 +32,8 @@ class DrawingRectangle extends PaintFunction {
     this.contextReal.lineJoin = "round"; 
     this.contextReal.lineWidth = 3; 
     this.contextReal.beginPath();
-    this.contextReal.rect(this.cpx, this.cpy, coord[0] - this.cpx, coord[1] - this.cpy);
+    this.radius = Math.pow((Math.pow((coord[0] - this.x), 2),(Math.pow((coord[1] - this.y), 2))), 1 / 2);
+    this.contextReal.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
     this.contextReal.stroke();
   }
 

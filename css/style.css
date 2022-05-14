@@ -1,7 +1,7 @@
 /* Universal */
-/* body {
+body {
   overflow: hidden;
-} */
+}
 /* Canvas */
 #canvas-container {
   min-height: 100%;

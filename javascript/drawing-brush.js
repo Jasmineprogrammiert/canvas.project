@@ -1,19 +1,15 @@
-// class MyEventTarget extends EventTarget {
-//   constructor(mySecret) {
-//     super();
-//     this._secret = mySecret;
-//   }
-class DrawingLine extends PaintFunction {
-  constructor(contextReal) {
-    super(); 
+class DrawingBrush extends PaintFunction {
+  constructor(contextReal, contextDraft) {
+    super();
     this.contextReal = contextReal;
+    this.contextDraft = contextDraft;
   }
 
   // On mouse down, ensure that the pen has these features
   onMouseDown(coord, event) {
     this.contextReal.strokeStyle = "#CD5C5C";
     this.contextReal.lineJoin = "round"; 
-    this.contextReal.lineWidth = 3; 
+    this.contextReal.lineWidth = 25; 
     this.contextReal.beginPath(); // Start a new path
     // Define the starting point of the line 
     // coord[0] = mouseX (definded in canvas-common.js)
